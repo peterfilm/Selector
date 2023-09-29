@@ -1,0 +1,4 @@
+venv/
+probas/
+.vscode/
+__pycache__/ 
