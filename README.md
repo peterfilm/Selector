@@ -5,7 +5,7 @@ This program is for select and manipulate photos from list of photos. You can se
 Program for photographers
 
 For create exe-file:
-pyinstaller --onefile --noconsole ps_open.py -i "img/icon.ico" --add-data "style.qss;."
+pyinstaller --onefile --noconsole selector.py -i "img/icon.ico" --add-data "style.qss;."
 
 ### version 1.0
 Release.

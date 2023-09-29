@@ -1,10 +1,10 @@
 from PyQt5.QtCore import QThread, pyqtSignal
 from modules.api import conf
 import os
-import pyexiv2
 import xml.etree.ElementTree as ET
 import re
 from filters._jpeg_finder import jpeg_finder2
+import pyexiv2
 
 
 class ChangeMetaData(QThread):
@@ -51,7 +51,8 @@ class ChangeMetaData(QThread):
         try:
             old_path = os.getcwd()
             os.chdir(os.path.dirname(os.path.realpath(i)))
-            img=pyexiv2.Image(os.path.basename(i), encoding='utf-8')
+
+            img=pyexiv2.Image(os.path.basename(i), encoding="utf-8")
             img.modify_xmp({'Xmp.xmp.Rating': self.rating})
             if self.label:
                 img.modify_xmp({'Xmp.xmp.Label': conf['LABELS'][str(self.label)]})

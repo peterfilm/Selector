@@ -1,6 +1,5 @@
 from modules.api import conf, name_of_file
 import os
-import pyexiv2
 from PyQt5.QtCore import QTimer, Qt
 from PyQt5.QtWidgets import QMessageBox
 import xml.etree.ElementTree as ET

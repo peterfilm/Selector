@@ -5,7 +5,6 @@ from data.design import Ui_Selector
 from modules import *
 import os
 
-
 class Selector(QWidget, Ui_Selector):
     '''
     Программа для выборки фотографий на ретушь от клиентов

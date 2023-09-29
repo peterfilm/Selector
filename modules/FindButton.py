@@ -64,16 +64,23 @@ class FindButton:
         
 
     def get_textEdit(self):
-        td = self.mw.textEdit.toPlainText()
-        td_split = re.split(splitter, td)
-        split_text = [item for item in td_split if item != None and [p for p in item if p not in ',; \n']]
-        choose_text = [re.findall('\d+', i.rsplit('.', 1)[0])[-1] for i in split_text if re.fullmatch(chooser, i)]
-        return choose_text
+        try:
+            td = self.mw.textEdit.toPlainText()
+            td_split = re.split(splitter, td)
+            split_text = [item for item in td_split if item != None and [p for p in item if p not in ',; \n']]
+            choose_text = [re.findall('\d+', i.rsplit('.', 1)[0])[-1] for i in split_text if re.fullmatch(chooser, i)]
+            return choose_text
+        except Exception as e:
+            print(e)
+            
     
     def all_folder(self, td_split):
-        split_text = [item for item in td_split if item != None and [p for p in item if p not in ',; \n']]
-        choose_text = [re.findall('\d+', i.rsplit('.', 1)[0])[-1] for i in split_text 
-                       if os.path.isfile(os.path.join(conf['PATH'],i)) 
-                       and check_formats(i.split('.')[-1].lower())
-                       and re.fullmatch(chooser, i) ]
-        return choose_text
+        try:
+            split_text = [item for item in td_split if item != None and [p for p in item if p not in ',; \n']]
+            choose_text = [re.findall('\d+', i.rsplit('.', 1)[0])[-1] for i in split_text 
+                        if os.path.isfile(os.path.join(conf['PATH'],i)) 
+                        and check_formats(i.split('.')[-1].lower())
+                        and re.fullmatch(chooser, i) ]
+            return choose_text
+        except Exception as e:
+            print(e)
