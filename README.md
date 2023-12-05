@@ -5,7 +5,7 @@ This program is for select and manipulate photos from list of photos. You can se
 Program for photographers
 
 For create exe-file:
-pyinstaller selector.spec"
+pyinstaller selector.spec
 
 ### version 1.0
 Release.
